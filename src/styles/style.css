@@ -109,6 +109,19 @@ a:visited {
   color: inherit;
 }
 
+.Navbar-cart-div {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+/* .Navbar-cart-div-number {
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  width: 20px;
+} */
+
 .Navbar button {
   float: right;
 }
