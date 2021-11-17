@@ -17,7 +17,6 @@ html {
   overflow: auto;
   background-image: url(../img/wallpaper-1.jpeg);
   background-size: cover;
-  /* font-family: "Open Sans", sans-serif; */
   color: white;
   text-shadow: 1px 1px 2px #000000;
   display: grid;
@@ -44,18 +43,6 @@ html {
   text-align: center;
   align-items: center;
 }
-
-/* .App-title-text-div button {
-  font-family: inherit;
-  width: 40%;
-  padding: 10px;
-  background: black;
-  color: white;
-  font-size: larger;
-  border-radius: 5px;
-  justify-self: center;
-  margin-top: 20px;
-} */
 
 .App-title-button {
   display: inline-block;
@@ -137,4 +124,119 @@ a:visited {
   font-family: "Genos", sans-serif;
   color: white;
   text-shadow: 1px 1px 2px #000000;
+}
+
+.Products-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.Card {
+  /* display: grid; */
+  display: flex;
+  /* flex-direction: column; */
+  /* display: block; */
+  min-height: 280px;
+  max-height: 280px;
+  /* grid-template-rows: 30fr 20fr 30fr 20fr; */
+  background-color: white;
+  color: black;
+  text-shadow: none;
+  opacity: 0.9;
+  border-radius: 10px;
+  /* justify-items: center; */
+}
+
+.Card-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  margin: 5px;
+  height: auto;
+  width: 100%;
+}
+
+.Card-data-img-container {
+  object-fit: contain;
+}
+
+.Card-data-img-container img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Card-data-description {
+  text-align: center;
+}
+
+.Card-data-description p {
+  /* text-align: left; */
+}
+
+.Card-data-action {
+  width: 60%;
+  margin-top: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 8px;
+  /* align-self: flex-end; */
+}
+
+.Card-data-quantity {
+  /* align-items: flex-end; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  text-align: center;
+}
+
+.Card-data-quantity-increment .Card-data-quantity-number {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* margin: auto; */
+}
+
+.Card-data-quantity-increment {
+  background-color: black;
+  color: white;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+.Card-data button {
+  /* align-self: flex-end; */
+  background-color: black;
+  color: white;
+  width: 80%;
+  /* display: flex; */
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+  /* justify-content: center; */
+  /* align-content: center; */
+  text-align: center;
+  border-radius: 5px;
+}
+
+@media only screen and (min-width: 1025px) {
+  .Products-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 60px;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+  }
 }
