@@ -1,11 +1,29 @@
 // Card.js
 
-import React from "react";
+import React, { useState } from "react";
 
 const Card = (props) => {
-  let addIcon = require("../img/add.png");
-  let removeIcon = require("../img/remove.png");
-  let addCartIcon = require("../img/add-cart.png");
+  const addIcon = require("../img/add-outline.png");
+  const removeIcon = require("../img/remove-outline.png");
+  const addCartIcon = require("../img/add-cart.png");
+
+  const addToCart = props.addToCart;
+
+  const [quantity, setQuantity] = useState(0);
+
+  const handleIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleDecrease = () => {
+    if (quantity === 0) setQuantity(0);
+    else setQuantity(quantity - 1);
+  };
+
+  const handleAddToCart = (product, quantity) => {
+    addToCart(product, quantity);
+    setQuantity(0);
+  };
 
   return (
     <div className="Card">
@@ -19,36 +37,29 @@ const Card = (props) => {
         </div>
         <div className="Card-data-action">
           <div className="Card-data-quantity">
-            {/* <div */}
-            {/* className="Card-data-quantity-increment" */}
-            {/* //   onClick={() => props.handleDecrease(props.quantity)} */}
-            {/* > */}
-            {/* <h3>-</h3> */}
-            <img src={removeIcon.default} alt="Not found" height="25" />
-
-            {/* </div> */}
+            <img
+              src={removeIcon.default}
+              alt="Remove"
+              height="25"
+              onClick={() => handleDecrease()}
+            />
             <div className="Card-data-quantity-number">
-              <h2>{props.quantity}</h2>
+              <h2>{quantity}</h2>
             </div>
-            {/* <div */}
-            {/* className="Card-data-quantity-increment" */}
-            {/* onClick={() => props.handleIncrease(props.id)} */}
-            {/* > */}
-            {/* <h3>+</h3> */}
-            <img src={addIcon.default} alt="Not found" height="25" />
-
-            {/* </div> */}
+            <img
+              src={addIcon.default}
+              alt="Add"
+              height="25"
+              onClick={() => handleIncrease()}
+            />
             <img
               id="cart"
               src={addCartIcon.default}
-              alt="Not found"
+              alt="Add to Cart"
               height="25"
-              onClick={() => props.addToCart(props.name)}
+              onClick={() => handleAddToCart(props.name, quantity)}
             />
           </div>
-          {/* <button onClick={() => props.addToCart(props.name)}> */}
-          {/* Add to Cart */}
-          {/* </button> */}
         </div>
       </div>
     </div>

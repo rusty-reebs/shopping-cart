@@ -1,32 +1,50 @@
 // Products.js
 
-import React from "react";
-import Navbar from "./Navbar";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
+import Checkout from "./Checkout";
 import ProductList from "./Product-list";
 
-const Products = () => {
-  // run an array function build an array of product cards <Card, <Card, <Card
-  // populate cards with a product object or JSON
-  const currentProducts = [];
+const Products = (props) => {
+  const increaseNavbarCart = props.increaseNavbarCart;
+
+  const [customerCart, setCustomerCart] = useState([]);
+
+  const addToCart = (product, quantity) => {
+    if (quantity > 0) {
+      let item = {};
+      item.name = product;
+      item.quantity = quantity;
+      console.log(item);
+      setCustomerCart((customerCart) => [...customerCart, item]);
+      increaseNavbarCart(quantity);
+    }
+    console.log(customerCart);
+  };
+
+  useEffect(() => {
+    console.log("here's the customerCart", customerCart);
+  });
+
+  //! change to map?
+  const productCatalog = [];
   ProductList.forEach((product) => {
-    currentProducts.push(
+    productCatalog.push(
       <Card
         key={product.id}
+        id={product.id}
         name={product.name}
         description={product.description}
         imageSrc={product.image}
+        addToCart={addToCart}
       />
     );
   });
 
   return (
     <div className="Products">
-      <Navbar />
-      <div className="Products-container">
-        {/* put array of product cards here */}
-        {currentProducts}
-      </div>
+      <div className="Products-container">{productCatalog}</div>
+      {/* <Checkout customerCart={customerCart} /> */}
     </div>
   );
 };
