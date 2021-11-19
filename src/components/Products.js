@@ -2,18 +2,20 @@
 
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
-import Checkout from "./Checkout";
 import ProductList from "./Product-list";
 
 const Products = (props) => {
   const increaseNavbarCart = props.increaseNavbarCart;
 
-  const [customerCart, setCustomerCart] = useState([]);
+  // const [customerCart, setCustomerCart] = useState([]);
+  let customerCart = props.customerCart;
+  let setCustomerCart = props.setCustomerCart;
 
-  const addToCart = (product, quantity) => {
+  const addToCart = (product, id, quantity) => {
     if (quantity > 0) {
       let item = {};
       item.name = product;
+      item.id = id;
       item.quantity = quantity;
       console.log(item);
       setCustomerCart((customerCart) => [...customerCart, item]);
@@ -26,25 +28,20 @@ const Products = (props) => {
     console.log("here's the customerCart", customerCart);
   });
 
-  //! change to map?
-  const productCatalog = [];
-  ProductList.forEach((product) => {
-    productCatalog.push(
-      <Card
-        key={product.id}
-        id={product.id}
-        name={product.name}
-        description={product.description}
-        imageSrc={product.image}
-        addToCart={addToCart}
-      />
-    );
-  });
-
   return (
     <div className="Products">
-      <div className="Products-container">{productCatalog}</div>
-      {/* <Checkout customerCart={customerCart} /> */}
+      <div className="Products-container">
+        {ProductList.map((product) => (
+          <Card
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            description={product.description}
+            imageSrc={product.image}
+            addToCart={addToCart}
+          />
+        ))}
+      </div>
     </div>
   );
 };

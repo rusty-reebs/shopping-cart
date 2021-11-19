@@ -20,8 +20,8 @@ const Card = (props) => {
     else setQuantity(quantity - 1);
   };
 
-  const handleAddToCart = (product, quantity) => {
-    addToCart(product, quantity);
+  const handleAddToCart = (product, id, quantity) => {
+    addToCart(product, id, quantity);
     setQuantity(0);
   };
 
@@ -57,7 +57,7 @@ const Card = (props) => {
               src={addCartIcon.default}
               alt="Add to Cart"
               height="25"
-              onClick={() => handleAddToCart(props.name, quantity)}
+              onClick={() => handleAddToCart(props.name, props.id, quantity)}
             />
           </div>
         </div>

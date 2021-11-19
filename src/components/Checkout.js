@@ -4,20 +4,22 @@ import React from "react";
 
 const Checkout = (props) => {
   const customerCart = props.customerCart;
+  console.log(customerCart);
 
-  const checkoutItems = [];
-  customerCart.forEach((thing) => {
-    checkoutItems.push(
-      <div>
-        <div>{thing.name}</div>
-        <div>{thing.quantity}</div>
-      </div>
-    );
-  });
   return (
     <div className="Checkout-container">
-      <h2>Here's your checkout!</h2>
-      {checkoutItems}
+      <div className="box">
+        <span className="close-icon" onClick={props.handleClose}>
+          x
+        </span>
+        <p>Here's your checkout!</p>
+        {customerCart.map((product) => (
+          <div key={product.id}>
+            <div>{product.name}</div>
+            <div>{product.quantity}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

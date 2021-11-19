@@ -1,7 +1,6 @@
 // App.js
 
 import React from "react";
-import Navbar from "./components/Navbar";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
       <div className="App-title-image-div">
         <img src={image.default} alt="Not found" />
       </div>

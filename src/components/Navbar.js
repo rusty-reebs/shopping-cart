@@ -1,10 +1,19 @@
 // Navbar.js
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Checkout from "./Checkout";
 
 const Navbar = (props) => {
-  let icon = require("../img/outline_shopping_cart_white_24dp.png");
+  const icon = require("../img/outline_shopping_cart_white_24dp.png");
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleCheckout = () => {
+    setIsOpen(!isOpen);
+  };
+
+  let customerCart = props.customerCart;
 
   return (
     <nav className="Navbar">
@@ -16,11 +25,13 @@ const Navbar = (props) => {
           <Link to="/products">Store</Link>
         </li>
       </ul>
-      <div className="Navbar-cart-div">
+      <div className="Navbar-cart-div" onClick={toggleCheckout}>
         <img src={icon.default} alt="Not found" height="20" />
-        <div className="Navbar-cart-div-number">0</div>
-        {/* if items=0 then do not display */}
+        <div className="Navbar-cart-div-number">{props.currentCart}</div>
       </div>
+      {isOpen && (
+        <Checkout handleClose={toggleCheckout} customerCart={customerCart} />
+      )}
     </nav>
   );
 };

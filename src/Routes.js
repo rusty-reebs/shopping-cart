@@ -5,10 +5,12 @@ import Products from "./components/Products";
 import Navbar from "./components/Navbar";
 
 const RouteSwitch = () => {
+  const [customerCart, setCustomerCart] = useState([]);
+
   const [currentCart, setCart] = useState(0);
 
   const increaseNavbarCart = (quantity) => {
-    setCart(currentCart + quantity); // currentCart + quantity
+    setCart(currentCart + quantity);
   };
 
   const decreaseNavbarCart = () => {
@@ -17,7 +19,7 @@ const RouteSwitch = () => {
 
   return (
     <BrowserRouter>
-      <Navbar currentCart={currentCart} />
+      <Navbar currentCart={currentCart} customerCart={customerCart} />
       <Routes>
         <Route path="/" element={<App />} />
         <Route
@@ -26,6 +28,8 @@ const RouteSwitch = () => {
             <Products
               increaseNavbarCart={increaseNavbarCart}
               decreaseNavbarCart={decreaseNavbarCart}
+              customerCart={customerCart}
+              setCustomerCart={setCustomerCart}
             />
           }
         />
