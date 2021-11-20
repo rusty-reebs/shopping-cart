@@ -14,8 +14,6 @@ function App() {
       <div className="App-title-text-div">
         <h1>Welcome to the Dune Store</h1>
         <h3>A project coded in React and plain CSS</h3>
-        {/* </div> */}
-        {/* <div className="App-shop-button-div"> */}
         <Link to="/products" className="App-title-button">
           Shop Now!
         </Link>

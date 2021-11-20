@@ -19,7 +19,12 @@ const RouteSwitch = () => {
 
   return (
     <BrowserRouter>
-      <Navbar currentCart={currentCart} customerCart={customerCart} />
+      <Navbar
+        currentCart={currentCart}
+        setCart={setCart}
+        customerCart={customerCart}
+        setCustomerCart={setCustomerCart}
+      />
       <Routes>
         <Route path="/" element={<App />} />
         <Route

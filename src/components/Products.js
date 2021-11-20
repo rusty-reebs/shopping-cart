@@ -1,15 +1,11 @@
 // Products.js
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
 import ProductList from "./Product-list";
 
 const Products = (props) => {
-  const increaseNavbarCart = props.increaseNavbarCart;
-
-  // const [customerCart, setCustomerCart] = useState([]);
-  let customerCart = props.customerCart;
-  let setCustomerCart = props.setCustomerCart;
+  const customerCart = props.customerCart;
 
   const addToCart = (product, id, quantity) => {
     if (quantity > 0) {
@@ -17,11 +13,9 @@ const Products = (props) => {
       item.name = product;
       item.id = id;
       item.quantity = quantity;
-      console.log(item);
-      setCustomerCart((customerCart) => [...customerCart, item]);
-      increaseNavbarCart(quantity);
+      props.setCustomerCart((customerCart) => [...customerCart, item]);
+      props.increaseNavbarCart(quantity);
     }
-    console.log(customerCart);
   };
 
   useEffect(() => {

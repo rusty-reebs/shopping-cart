@@ -13,8 +13,6 @@ const Navbar = (props) => {
     setIsOpen(!isOpen);
   };
 
-  let customerCart = props.customerCart;
-
   return (
     <nav className="Navbar">
       <ul className="Navbar-nav-links">
@@ -30,7 +28,12 @@ const Navbar = (props) => {
         <div className="Navbar-cart-div-number">{props.currentCart}</div>
       </div>
       {isOpen && (
-        <Checkout handleClose={toggleCheckout} customerCart={customerCart} />
+        <Checkout
+          handleClose={toggleCheckout}
+          customerCart={props.customerCart}
+          setCart={props.setCart}
+          setCustomerCart={props.setCustomerCart}
+        />
       )}
     </nav>
   );

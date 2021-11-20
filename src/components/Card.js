@@ -7,8 +7,6 @@ const Card = (props) => {
   const removeIcon = require("../img/remove-outline.png");
   const addCartIcon = require("../img/add-cart.png");
 
-  const addToCart = props.addToCart;
-
   const [quantity, setQuantity] = useState(0);
 
   const handleIncrease = () => {
@@ -21,7 +19,7 @@ const Card = (props) => {
   };
 
   const handleAddToCart = (product, id, quantity) => {
-    addToCart(product, id, quantity);
+    props.addToCart(product, id, quantity);
     setQuantity(0);
   };
 
