@@ -120,8 +120,8 @@ a:visited {
 
 .Products {
   margin-top: 40px;
-  /* height: 100vh; */
-  /* width: 100vw; */
+  height: 100vh;
+  width: 100vw;
   min-height: 100%;
   max-height: 100%;
   overflow: auto;
@@ -168,6 +168,7 @@ a:visited {
 
 .Card-data-img-container img {
   display: block;
+  max-height: 100px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -191,8 +192,8 @@ a:visited {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 3fr;
   width: auto;
-  text-align: center;
   align-items: center;
+  justify-items: center;
 }
 
 .Card-data-quantity-number {
@@ -236,13 +237,25 @@ a:visited {
   background: #fff;
   color: black;
   border-radius: 4px;
-  padding: 20px;
+  /* padding: 20px; */
   border: 1px solid #999;
   overflow: auto;
   text-align: center;
 }
 
-.Checkout-close-icon {
+.Checkout-top {
+  justify-self: right;
+}
+
+.Checkout-top img {
+  max-height: 1.8rem;
+}
+
+.Checkout-box h3 {
+  margin-bottom: 20px;
+}
+
+/* .Checkout-close-icon {
   content: "x";
   cursor: pointer;
   position: fixed;
@@ -256,10 +269,12 @@ a:visited {
   text-align: center;
   border: 1px solid #999;
   font-size: 20px;
-}
+} */
 
 .Checkout-product {
   display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .Checkout-product-name {
@@ -275,25 +290,136 @@ a:visited {
   font-size: larger;
   width: 60%;
   margin-top: 20px;
+  margin-bottom: 20px;
   justify-self: center;
+  border-radius: 28px;
 }
 
 .Checkout-thank-you {
-  /* display: none; */
   background-color: black;
   color: white;
   border-radius: 8px;
+  width: 80%;
   margin-top: 15px;
+  margin-bottom: 20px;
+  justify-self: center;
+}
+
+.Checkout-thank-you h3 {
+  margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 768px) {
+  .Navbar {
+    font-size: 1.5rem;
+  }
+
+  .Navbar-cart-div {
+    align-items: center;
+  }
+
+  .App-title-image-div img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  .App-title-text-div {
+    font-size: xx-large;
+  }
+
+  .App-title-button {
+    font-size: xx-large;
+  }
+
+  .Products-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 50px;
+  }
+
+  .Card-data-img-container img {
+    max-height: 8rem;
+  }
+
+  .Card-data-description {
+    font-size: larger;
+  }
+
+  .Card-data-quantity {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 3fr;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
+  .Navbar {
+    font-size: 1.5rem;
+  }
+
+  .Navbar-cart-div {
+    align-items: center;
+  }
+
+  .App-title-image-div img {
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+
+  .App-title-text-div {
+    font-size: x-large;
+  }
+
+  .App-title-button {
+    font-size: larger;
+  }
+
   .Products-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 60px;
+    grid-gap: 40px;
     margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 180px;
+    margin-right: 180px;
     margin-bottom: 50px;
+  }
+
+  .Card-data-img-container img {
+    max-height: 7rem;
+  }
+
+  .Card-data-description {
+    font-size: x-large;
+  }
+
+  .Card-data-quantity {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 3fr;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .Checkout-box {
+    width: 60%;
+  }
+
+  .Checkout-box button {
+    width: 40%;
+  }
+
+  .Checkout-thank-you {
+    width: 60%;
   }
 }
