@@ -15,6 +15,7 @@ html {
   min-height: 100%;
   max-height: 100%;
   overflow: auto;
+  /* overflow: visible; */
   background-image: url(../img/wallpaper-1.jpeg);
   background-size: cover;
   color: white;
@@ -105,14 +106,12 @@ a:visited {
   height: auto;
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 
-/* .Navbar-cart-div-number {
-  background-color: white;
-  color: black;
-  border-radius: 50%;
-  width: 20px;
-} */
+.Navbar-cart-div-number {
+  width: 1rem;
+}
 
 .Navbar button {
   float: right;
@@ -121,10 +120,11 @@ a:visited {
 .Products {
   margin-top: 40px;
   height: 100vh;
+  height: auto;
   width: 100vw;
   min-height: 100%;
   max-height: 100%;
-  overflow: auto;
+  overflow-y: hidden;
   background-image: url(../img/wallpaper-5.jpg);
   background-size: cover;
   font-family: "Genos", sans-serif;
