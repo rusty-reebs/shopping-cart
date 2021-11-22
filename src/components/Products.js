@@ -9,12 +9,23 @@ const Products = (props) => {
 
   const addToCart = (product, id, quantity) => {
     if (quantity > 0) {
-      let item = {};
-      item.name = product;
-      item.id = id;
-      item.quantity = quantity;
-      props.setCustomerCart((customerCart) => [...customerCart, item]);
-      props.increaseNavbarCart(quantity);
+      let existingItem = customerCart.find((item) => item.name === product);
+      if (existingItem) {
+        let editedCustomerCart = customerCart.filter(
+          (item) => item.name !== product
+        );
+        existingItem.quantity = existingItem.quantity + quantity;
+        editedCustomerCart.push(existingItem);
+        props.setCustomerCart(editedCustomerCart);
+        props.increaseNavbarCart(quantity);
+      } else {
+        let newItem = {};
+        newItem.name = product;
+        newItem.id = id;
+        newItem.quantity = quantity;
+        props.setCustomerCart((customerCart) => [...customerCart, newItem]);
+        props.increaseNavbarCart(quantity);
+      }
     }
   };
 
