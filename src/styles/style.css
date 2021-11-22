@@ -1,4 +1,4 @@
-/* mobile first */
+/* Mobile first */
 
 * {
   box-sizing: border-box;
@@ -15,7 +15,6 @@ html {
   min-height: 100%;
   max-height: 100%;
   overflow: auto;
-  /* overflow: visible; */
   background-image: url(../img/wallpaper-1.jpeg);
   background-size: cover;
   color: white;
@@ -27,7 +26,6 @@ html {
 }
 
 .App-title-image-div {
-  /* example */
   display: flex;
   align-items: flex-end;
 }
@@ -56,15 +54,11 @@ html {
   margin-top: 15px;
   text-shadow: 0px 1px 0px grey;
   font-size: 25px;
-  /* padding: 16px 20px; */
-  /* justify-self: center; */
-  /* text-decoration: none; */
 }
 
 .Navbar {
   position: fixed;
   top: 0;
-  /* overflow: hidden; affects scroll-bar?*/
   z-index: 1;
   height: 50px;
   width: 100%;
@@ -79,17 +73,11 @@ html {
 }
 
 .Navbar-nav-links {
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, auto); */
-  /* grid-gap: 20px; */
-  /* display: inline; */
-
   list-style: none;
 }
 
 .Navbar-nav-item {
   float: left;
-  text-decoration: none;
   color: white;
   transition: 0.3s all;
 }
@@ -111,10 +99,6 @@ a:visited {
 
 .Navbar-cart-div-number {
   width: 1rem;
-}
-
-.Navbar button {
-  float: right;
 }
 
 .Products {
@@ -162,10 +146,6 @@ a:visited {
   width: 100%;
 }
 
-.Card-data-img-container {
-  object-fit: contain;
-}
-
 .Card-data-img-container img {
   display: block;
   max-height: 100px;
@@ -180,11 +160,7 @@ a:visited {
 
 .Card-data-action {
   width: 90%;
-  /* height: 20%; adjust this? */
   margin-top: auto;
-  /* display: grid; */
-  /* grid-template-rows: 1fr 1fr; */
-  /* grid-gap: 8px; */
 }
 
 .Card-data-quantity {
@@ -204,16 +180,6 @@ a:visited {
   justify-self: end;
 }
 
-/* .Checkout-container {
-  display: block;
-  position: fixed;
-  top: 50px;
-  width: 200px;
-  height: 500px;
-  background-color: white;
-  color: black;
-} */
-
 .Checkout-container {
   position: fixed;
   background: #00000050;
@@ -224,8 +190,6 @@ a:visited {
 }
 
 .Checkout-box {
-  /* display: flex; */
-  /* flex-direction: column; */
   display: grid;
   grid-template-rows: auto;
   position: relative;
@@ -237,7 +201,6 @@ a:visited {
   background: #fff;
   color: black;
   border-radius: 4px;
-  /* padding: 20px; */
   border: 1px solid #999;
   overflow: auto;
   text-align: center;
@@ -256,27 +219,10 @@ a:visited {
   margin-bottom: 20px;
 }
 
-/* .Checkout-close-icon {
-  content: "x";
-  cursor: pointer;
-  position: fixed;
-  right: calc(15% - 30px);
-  top: calc(100vh - 85vh - 33px);
-  background: #ededed;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  line-height: 20px;
-  text-align: center;
-  border: 1px solid #999;
-  font-size: 20px;
-} */
-
 .Checkout-product {
   display: flex;
   flex-direction: row;
   font-size: larger;
-  /* margin-right: 20px; */
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 10px;

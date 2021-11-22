@@ -6,22 +6,20 @@ import Navbar from "./components/Navbar";
 
 const RouteSwitch = () => {
   const [customerCart, setCustomerCart] = useState([]);
-
-  const [currentCart, setCart] = useState(0);
+  const [currentNavbarCart, setNavbarCart] = useState(0);
 
   const increaseNavbarCart = (quantity) => {
-    setCart(currentCart + quantity);
+    setNavbarCart(currentNavbarCart + quantity);
   };
-
   const decreaseNavbarCart = (quantity) => {
-    setCart(currentCart - quantity);
+    setNavbarCart(currentNavbarCart - quantity);
   };
 
   return (
     <BrowserRouter>
       <Navbar
-        currentCart={currentCart}
-        setCart={setCart}
+        currentNavbarCart={currentNavbarCart}
+        setNavbarCart={setNavbarCart}
         decreaseNavbarCart={decreaseNavbarCart}
         customerCart={customerCart}
         setCustomerCart={setCustomerCart}
@@ -33,7 +31,6 @@ const RouteSwitch = () => {
           element={
             <Products
               increaseNavbarCart={increaseNavbarCart}
-              // decreaseNavbarCart={decreaseNavbarCart}
               customerCart={customerCart}
               setCustomerCart={setCustomerCart}
             />

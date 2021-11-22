@@ -1,6 +1,6 @@
 // Products.js
 
-import React, { useEffect } from "react";
+import React from "react";
 import Card from "./Card";
 import ProductList from "./Product-list";
 
@@ -28,10 +28,6 @@ const Products = (props) => {
       }
     }
   };
-
-  useEffect(() => {
-    console.log("here's the customerCart", customerCart);
-  });
 
   return (
     <div className="Products">

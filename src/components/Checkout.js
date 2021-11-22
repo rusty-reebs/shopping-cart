@@ -6,15 +6,15 @@ const Checkout = (props) => {
   const closeIcon = require("../img/close-x.png");
   const trashIcon = require("../img/trash-outline.png");
 
-  const [thankYouMessage, setThankYouMessage] = useState(false);
+  const customerCart = props.customerCart;
 
-  const customerCart = props.customerCart; //! remove?
+  const [thankYouMessage, setThankYouMessage] = useState(false);
 
   const handlePurchase = () => {
     setThankYouMessage(true);
     setTimeout(() => {
       props.setCustomerCart([]);
-      props.setCart(0);
+      props.setNavbarCart(0);
       props.handleClose();
     }, 2500);
   };

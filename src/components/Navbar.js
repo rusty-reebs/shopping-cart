@@ -25,14 +25,14 @@ const Navbar = (props) => {
       </ul>
       <div className="Navbar-cart-div" onClick={toggleCheckout}>
         <img src={icon.default} alt="Not found" height="20" />
-        <div className="Navbar-cart-div-number">{props.currentCart}</div>
+        <div className="Navbar-cart-div-number">{props.currentNavbarCart}</div>
       </div>
       {isOpen && (
         <Checkout
           handleClose={toggleCheckout}
           customerCart={props.customerCart}
           decreaseNavbarCart={props.decreaseNavbarCart}
-          setCart={props.setCart}
+          setNavbarCart={props.setNavbarCart}
           setCustomerCart={props.setCustomerCart}
         />
       )}
