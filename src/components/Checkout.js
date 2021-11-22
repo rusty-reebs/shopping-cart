@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 const Checkout = (props) => {
   const closeIcon = require("../img/close-x.png");
+  const trashIcon = require("../img/trash-outline.png");
 
   const [thankYouMessage, setThankYouMessage] = useState(false);
 
@@ -18,22 +19,18 @@ const Checkout = (props) => {
     }, 2500);
   };
 
-  // customerCart array needs to find duplicates and get totals
-  //   const processCustomerCart = () => {
-  //   customerCart.forEach(item => {
-  // const sameProducts = customerCart.filter(
-  //   (product) => product.name == item.name
-  // );
-  // console.log("duplicates", sameProducts);
-  //   };
-  //   processCustomerCart();
+  const handleDeleteItem = (product) => {
+    let deletedItem = customerCart.find((item) => item.name === product.name);
+    let editedCustomerCart = customerCart.filter(
+      (item) => item.name !== product.name
+    );
+    props.setCustomerCart(editedCustomerCart);
+    props.decreaseNavbarCart(deletedItem.quantity);
+  };
 
   return (
     <div className="Checkout-container">
       <div className="Checkout-box">
-        {/* <span className="Checkout-close-icon" onClick={props.handleClose}>
-          x
-        </span> */}
         <div className="Checkout-top">
           <img
             src={closeIcon.default}
@@ -48,8 +45,13 @@ const Checkout = (props) => {
         )}
         {customerCart.map((product) => (
           <div className="Checkout-product" key={product.id}>
-            <div>{product.quantity} - </div>
+            <div>{product.quantity}&nbsp;-&nbsp;</div>
             <div className="Checkout-product-name">{product.name}</div>
+            <img
+              src={trashIcon.default}
+              alt="Trash"
+              onClick={() => handleDeleteItem(product)}
+            />
           </div>
         ))}
         {customerCart.length > 0 && (

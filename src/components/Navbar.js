@@ -31,6 +31,7 @@ const Navbar = (props) => {
         <Checkout
           handleClose={toggleCheckout}
           customerCart={props.customerCart}
+          decreaseNavbarCart={props.decreaseNavbarCart}
           setCart={props.setCart}
           setCustomerCart={props.setCustomerCart}
         />

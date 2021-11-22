@@ -13,8 +13,8 @@ const RouteSwitch = () => {
     setCart(currentCart + quantity);
   };
 
-  const decreaseNavbarCart = () => {
-    setCart(currentCart - 1);
+  const decreaseNavbarCart = (quantity) => {
+    setCart(currentCart - quantity);
   };
 
   return (
@@ -22,6 +22,7 @@ const RouteSwitch = () => {
       <Navbar
         currentCart={currentCart}
         setCart={setCart}
+        decreaseNavbarCart={decreaseNavbarCart}
         customerCart={customerCart}
         setCustomerCart={setCustomerCart}
       />
@@ -32,7 +33,7 @@ const RouteSwitch = () => {
           element={
             <Products
               increaseNavbarCart={increaseNavbarCart}
-              decreaseNavbarCart={decreaseNavbarCart}
+              // decreaseNavbarCart={decreaseNavbarCart}
               customerCart={customerCart}
               setCustomerCart={setCustomerCart}
             />

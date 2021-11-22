@@ -249,6 +249,7 @@ a:visited {
 
 .Checkout-top img {
   max-height: 1.8rem;
+  cursor: pointer;
 }
 
 .Checkout-box h3 {
@@ -273,12 +274,22 @@ a:visited {
 
 .Checkout-product {
   display: flex;
+  flex-direction: row;
+  font-size: larger;
+  /* margin-right: 20px; */
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 10px;
 }
 
 .Checkout-product-name {
   text-align: left;
+}
+
+.Checkout-product img {
+  margin-left: auto;
+  height: 1.9rem;
+  cursor: pointer;
 }
 
 .Checkout-box h2 {
@@ -293,6 +304,7 @@ a:visited {
   margin-bottom: 20px;
   justify-self: center;
   border-radius: 28px;
+  cursor: pointer;
 }
 
 .Checkout-thank-you {
@@ -412,7 +424,7 @@ a:visited {
   }
 
   .Checkout-box {
-    width: 60%;
+    width: 50%;
   }
 
   .Checkout-box button {
@@ -420,6 +432,6 @@ a:visited {
   }
 
   .Checkout-thank-you {
-    width: 60%;
+    width: 50%;
   }
 }
