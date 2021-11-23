@@ -41,6 +41,7 @@ html {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  width: 100%;
 }
 
 .App-title-button {
@@ -50,10 +51,11 @@ html {
   color: white;
   border-radius: 28px;
   border: 1px solid white;
-  width: 50%;
+  /* width: 50%; */
   margin-top: 15px;
   text-shadow: 0px 1px 0px grey;
   font-size: 25px;
+  width: 40%;
 }
 
 .Navbar {
@@ -340,6 +342,7 @@ a:visited {
 
   .App-title-button {
     font-size: larger;
+    width: 20%;
   }
 
   .Products-container {

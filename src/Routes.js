@@ -25,9 +25,9 @@ const RouteSwitch = () => {
         setCustomerCart={setCustomerCart}
       />
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="shopping-cart/" element={<App />} />
         <Route
-          path="/products"
+          path="shopping-cart/products"
           element={
             <Products
               increaseNavbarCart={increaseNavbarCart}

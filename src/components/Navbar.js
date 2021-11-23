@@ -17,10 +17,10 @@ const Navbar = (props) => {
     <nav className="Navbar">
       <ul className="Navbar-nav-links">
         <li className="Navbar-nav-item">
-          <Link to="/">Home</Link>
+          <Link to="shopping-cart/">Home</Link>
         </li>
         <li className="Navbar-nav-item">
-          <Link to="/products">Store</Link>
+          <Link to="shopping-cart/products">Store</Link>
         </li>
       </ul>
       <div className="Navbar-cart-div" onClick={toggleCheckout}>
