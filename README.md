@@ -20,7 +20,7 @@ Objectives: practice using `react-router-dom` to build a multi-page web app util
 
 - how to use routes to navigate between pages
 - practiced using array methods like `.find`, `.filter`, and `.map`
-- how build and call a popup box in React
+- how to build and call a modal in React
 - practiced passing `state` and `props` to different components
 - how to import images in React
 - practiced responsive design in plain CSS
